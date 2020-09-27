@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.Controller">
+<bottom>
+    <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="1.0">
+        <children>
+            <Label fx:id="myLabelInfoTime" contentDisplay="CENTER" text="">
+                <HBox.margin>
+                    <Insets left="1.0" right="1.0" />
+                </HBox.margin></Label>
+            <Label fx:id="myLabelInfoDate" text="">
+                <HBox.margin>
+                    <Insets left="1.0" right="1.0" />
+                </HBox.margin>
+            </Label>
+            <Label fx:id="myLabelNewDraw" text="">
+                <HBox.margin>
+                    <Insets left="1.0" />
+                </HBox.margin>
+            </Label>
+            <Label fx:id="myLabelPointAnalytical" text="">
+                <HBox.margin>
+                    <Insets right="1.0" />
+                </HBox.margin>
+            </Label>
+            <Label fx:id="myLabelLastDateTime" cache="true" text="" />
+        </children>
+        <effect>
+            <Bloom />
+        </effect>
+        <BorderPane.margin>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+        </BorderPane.margin>
+    </HBox>
+</bottom>
+</BorderPane>
