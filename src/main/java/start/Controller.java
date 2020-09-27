@@ -19,16 +19,24 @@ public class Controller {
     private void infoLineRefreshDateTime() {
         Thread refreshFormDateTime = new Thread(() -> {
             InfoLine info = new DateTime();
-            while (true) {
+            for (;;) {
                 if (info.stepSecond()) {
-                    Platform.runLater(() -> myLabelInfoTime.setText(info.time()));
+                    refreshTime(info.time());
                     if (info.stepDay()) {
-                        Platform.runLater(() -> myLabelInfoDate.setText(info.date()));
+                        refreshDate(info.date());
                     }
                 }
                 info.refresh();
             }
         });
         refreshFormDateTime.start();
+    }
+
+    private void refreshDate(String string) {
+        Platform.runLater(() -> myLabelInfoDate.setText(string));
+    }
+
+    private void refreshTime(String string) {
+        Platform.runLater(() -> myLabelInfoTime.setText(string));
     }
 }

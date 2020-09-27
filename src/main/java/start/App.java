@@ -20,8 +20,7 @@ public class App extends Application {
     }
 
     private FXMLLoader getFxmlLoader() {
-        String mainScene = "view";
-        return new FXMLLoader(getClass().getResource("/" + mainScene + ".fxml"));
+        return new FXMLLoader(getClass().getResource("/view.fxml"));
     }
 
     public static void main(String[] args) {

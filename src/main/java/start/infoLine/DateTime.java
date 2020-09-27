@@ -1,5 +1,6 @@
 package start.infoLine;
 
+import java.lang.annotation.Annotation;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -59,4 +60,5 @@ public class DateTime implements InfoLine {
     public String date() {
         return LocalDate.now().format(DateTimeFormatter.ISO_DATE);
     }
+
 }
