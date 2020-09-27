@@ -29,7 +29,7 @@
                     <Insets right="1.0" />
                 </HBox.margin>
             </Label>
-            <Label fx:id="myLabelLastDateTime" cache="true" text="" />
+            <Label fx:id="myLabelLastDateTime" cache="true" lineSpacing="1.0" text="" />
         </children>
         <effect>
             <Bloom />

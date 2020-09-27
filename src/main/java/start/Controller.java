@@ -17,18 +17,18 @@ public class Controller {
     }
 
     private void infoLineRefreshDateTime() {
-        InfoLine info = new DateTime();
-        Thread myLabelTime = new Thread(() -> {
+        Thread refreshFormDateTime = new Thread(() -> {
+            InfoLine info = new DateTime();
             while (true) {
                 if (info.stepSecond()) {
                     Platform.runLater(() -> myLabelInfoTime.setText(info.time()));
-                    if(info.stepDay()){
+                    if (info.stepDay()) {
                         Platform.runLater(() -> myLabelInfoDate.setText(info.date()));
                     }
                 }
                 info.refresh();
             }
         });
-        myLabelTime.start();
+        refreshFormDateTime.start();
     }
 }
