@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import start.infoLine.DateTime;
 import start.infoLine.InfoLine;
+import thread.RefreshApi;
 
 public class Controller {
     @FXML
@@ -14,6 +15,8 @@ public class Controller {
 
     public void initialize() {
         infoLineRefreshDateTime();
+
+        RefreshApi.countryList();
     }
 
     private void infoLineRefreshDateTime() {

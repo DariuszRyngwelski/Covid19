@@ -11,4 +11,5 @@ public interface GetApi<T> {
 
     LocalDateTime getTime();
 
+    boolean addBase();
 }

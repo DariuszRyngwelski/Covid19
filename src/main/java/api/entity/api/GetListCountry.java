@@ -1,7 +1,11 @@
 package api.entity.api;
 
 import api.entity.api.matrix.CountryListApi;
+import api.utils.Series;
+import api.utils.SessionFactoryProvider;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -40,5 +44,28 @@ public class GetListCountry implements GetApi<CountryListApi> {
     @Override
     public LocalDateTime getTime() {
         return time;
+    }
+
+    @Override
+    public boolean addBase() {
+        return openSession(new SessionFactoryProvider()
+                .getSessionFactory(Series.API)
+                .openSession()
+        );
+    }
+
+    private boolean openSession(Session session) {
+        boolean state = addedElement(session);
+        session.close();
+        return state;
+    }
+
+    private boolean addedElement(Session session) {
+        Transaction transaction = session.beginTransaction();
+        for (CountryListApi element : getList()) {
+            session.persist(element);
+        }
+        transaction.commit();
+        return true;
     }
 }
